@@ -42,5 +42,4 @@ ActiveRecord::Schema.define(version: 2021_07_23_144724) do
   add_foreign_key "reviews", "songs"
   add_foreign_key "reviews", "super_fans"
   add_foreign_key "super_fans", "songs"
-
 end
