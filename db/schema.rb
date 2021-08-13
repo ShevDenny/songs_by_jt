@@ -39,7 +39,17 @@ ActiveRecord::Schema.define(version: 2021_07_23_144724) do
     t.index ["song_id"], name: "index_super_fans_on_song_id"
   end
 
+  create_table "superfans", force: :cascade do |t|
+    t.string "name"
+    t.integer "years_of_fandom"
+    t.integer "song_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["song_id"], name: "index_superfans_on_song_id"
+  end
+
   add_foreign_key "reviews", "songs"
   add_foreign_key "reviews", "super_fans"
   add_foreign_key "super_fans", "songs"
+  add_foreign_key "superfans", "songs"
 end

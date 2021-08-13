@@ -1,6 +1,5 @@
 class SuperFansController < ApplicationController
-
-    def index
+4    def index
         superfans = SuperFan.all
         render json: superfans, include: song
     end
